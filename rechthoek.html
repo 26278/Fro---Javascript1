@@ -15,15 +15,16 @@
 
 		<div id="assignment">
 			<h4>Lengte rechthoek (in cm):</h4><br>
-			<div><input type="text" id="lengte" autofocus></div>
+			<div><input type="number" id="lengte" autofocus></div>
 			<h4>Breedte rechthoek (in cm):</h4><br>
-			<div><input type="text" id="breedte"></div><br>
+			<div><input type="number" id="breedte"></div><br>
 			<button type="button" onclick="rekenOm()">Reken om</button>
 			<h4>Oppervlakte rechthoek:</h4><br>
 			<div id="oppervlakte">Hierin komt de oppervlakte</div>
 			<h4>Omtrek rechthoek:</h4>
 			<div id="omtrek">Hierin komt de omtrek</div>
-			
+			<h4>Diagonale lengte (afgerond) :</h4>
+			<div id="diagonaal">Hierin komt de diagonale lengte</div>
 		</div>
 
 		<div id="links">
@@ -47,13 +48,17 @@
 
 		let berekenOppervlakte;
 		let berekenOmtrek;
+		let berekenDiagonaal;
 
 		function rekenOm() {
 			berekenOppervlakte = lengte.value * breedte.value;
 			berekenOmtrek = lengte.value * 2 + breedte.value * 2;
+			berekenDiagonaal = (lengte.value * lengte.value) + (breedte.value * breedte.value);
 
 			oppervlakte.innerHTML = berekenOppervlakte + " cm2";
 			omtrek.innerHTML = berekenOmtrek + " cm";
+			diagonaal.innerHTML = Math.floor(Math.sqrt(berekenDiagonaal)) + " cm";
+
 		}
 	</script>
 </body>
