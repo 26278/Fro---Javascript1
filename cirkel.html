@@ -14,7 +14,7 @@
 		<div id="head"><h1>Cirkel berekenen</h1></div>
 		<div id="assignment">
 			<h4>Straal cirkel:</h4>
-			<div><input type="text" id="straal" autofocus></div><br>
+			<div><input type="number" id="straal" autofocus></div><br>
 			<button type="button" onclick="rekenOm()">Bereken opp. en omtrek</button>
 			<h4>Oppervlakte cirkel:</h4><br>
 			<div id="oppervlakte">Hierin komt de oppervlakte</div>
@@ -46,7 +46,7 @@
 		let berekenOmtrek;
 
 		function rekenOm() {
-			berekenOppervlakte = straal.value * straal.value * Math.PI;
+			berekenOppervlakte = (straal.value^2) * Math.PI;
 			berekenOmtrek = straal.value * 2 * Math.PI;
 
 			oppervlakte.innerHTML = Math.floor(berekenOppervlakte) + " cm2";
